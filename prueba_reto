@@ -97,47 +97,62 @@ class Jugar():  #definicion de la funcion jugar
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+print("            Bienvenidos           ")
+
 Namelist=[] #arreglo de nombres de los jugadores
 NameScore=[]
-print("ingrse el numero de jugadores ")
+print("     ingrse el numero de jugadores     ")
 n=int(input())
 
-for i in range(n):
-    NA=""
-    NA1=[]
-    print("ingrese el nombre del jugador " +str(i+1))
-    Name=input ()
-    NA1=Player(Name)
-    NA1=NA1.Change_score(0)
-    NameScore.append(NA1)
-    NA=Player(Name)
-    NA=NA.Change_name(Name) 
-    Namelist.append(NA)  #funcion para agregar el nombre deseado
+print("Desea modificar los nombres de los jugadores ? \n 1, para si 2. para no")
 
-for i in range(n):
-    print(Namelist[i])
+CN=int(input())
 
+if CN==1:
+    for i in range(n):
+        
+        NA1=[]
+        print("ingrese el nombre del jugador " +str(i+1))
+        Name=input ()
+        NA1=Player(Name)
+        NA1=NA1.Change_score(0)
+        NameScore.append(NA1)
+        NA=Player(Name)
+        NA=NA.Change_name(Name) 
+        Namelist.append(NA)  #funcion para agregar el nombre deseado
+        
+    
 
+if CN==2:
+    for i in range(n):
 
-for i in range(n+2):
+         Name="Player "+ str(i+1)
+         NA=Player(Name)
+         NA=NA.Change_name(Name) 
+         Namelist.append(NA)  #funcion para agregar el nombre por default
+
   
-    Name="Player "+ str(i+1)
-    NA=Player(Name)
-    NA=NA.Change_name(Name) 
-    Namelist.append(NA)  #funcion para agregar el nombre por default
-
-
-
-for i in range(n+2):
-    print(Namelist[i])
-
 
 Nump=len(Namelist)
 
 
 b=Jugar
 b.Play(Nump,Namelist,1000,NameScore)
-
-   
-
-p
