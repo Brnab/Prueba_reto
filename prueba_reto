@@ -49,19 +49,26 @@ class Jugar():  #definicion de la funcion jugar
            
             for i in range(n):
                 NL[i]
+                TL=NL[:]
                 Resultado=random.randint(1,6)*100
                 print("el Jugador " +NL[i]+" Sacó " + str(Resultado))
                 NS[i]+=Resultado
+                
                 for j in range(i):
                     if NS[j]>=KP:
+                        
                         contador=contador +1
                         cw=cw+1
                         print("el Puesto " +str(contador)+ "es para " +NL[i])
+                        TL.pop()[j]
                         
-                        winners.append(winners)
                     else:
                      contador=contador
                      cw=cw
+                NL=TL[:]
+                     
+
+
 
        
 
