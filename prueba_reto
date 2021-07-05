@@ -1,5 +1,5 @@
 import random
-
+import os
 
 class Player :   #creacion de jugador
     
@@ -49,24 +49,31 @@ class Jugar():  #definicion de la funcion jugar
            
             for i in range(n):
                 NL[i]
-                TL=NL[:]
+                
                 Resultado=random.randint(1,6)*100
                 print("el Jugador " +NL[i]+" Sacó " + str(Resultado))
                 NS[i]+=Resultado
                 
-                for j in range(i):
-                    if NS[j]>=KP:
+                for i in range(n):
+                    if NS[i]>=KP:
                         
                         contador=contador +1
                         cw=cw+1
-                        print("el Puesto " +str(contador)+ "es para " +NL[i])
-                        TL.pop()[j]
-                        
+                        print("el Puesto " +str(contador)+ "es para " +NL[i]+ '\n')
+                        file= open("archivo", 'a')
+                        file.write("Puesto Numero "+ str(contador)+ " fue para " + NL[i]+'\n')   
+                        file.write("longitud de la pista " +str(KP)+'\n')    
+                        file.close
+
                     else:
-                     contador=contador
-                     cw=cw
-                NL=TL[:]
-                     
+                        contador=contador
+                        cw=cw
+
+                  
+    
+
+
+
 
 
 
@@ -133,4 +140,4 @@ b.Play(Nump,Namelist,1000,NameScore)
 
    
 
-
+p
